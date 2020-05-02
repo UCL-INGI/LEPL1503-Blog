@@ -15,17 +15,11 @@ author: Andru Onciul
 taper cette ligne dans le powershell de windows (executer en tant que administrateur sinon ca marchera pas):
 ```Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux```
 
-2)	une fois ubuntu installé : 
-2.1) choisir un username (minuscule sans espaces) et 
-2.2) un code (a ne pas perdre)
+2	une fois ubuntu installé : 
+2.1 choisir un username (minuscule sans espaces) et 
+2.2 un code (a ne pas perdre)
 
 #Taper ces lignes de commandes dans Ubuntu
-
-```cd /mnt/c                              #va sur le disque dur C: du pc```
-![Publish]({{ site.baseurl }}/images/mountCs.PNG)
-
-Vous êtes maintenant sur les fichiers du disque dur(C:) principal de votre pc. 
-Vous pouvez utiliser dans ce bash comme le bash d'un système UNIX puisque ca en est un.
 
 Pour la première fois sur le bash il va falloir installer le compilateur ainsi que
 toutes les librairies qui seront utilisées dans les codes qui seront compiler.
@@ -47,12 +41,21 @@ sudo apt-get install cppcheck 			    #cppcheck
 sudo apt-get install libcunit1 libcunit1-doc libcunit1-dev 		#cunit
 sudo apt-get install zlib1g-dev			    #librairies et headers
 ```
+
+Maintenant pour accéder au dossier de votre projet
+
+```cd /mnt/c                              #va sur le disque dur C: du pc```
+![Publish]({{ site.baseurl }}/images/mountCs.PNG)
+
+Vous êtes maintenant sur les fichiers du disque dur(C:) principal de votre pc. 
+Vous pouvez utiliser dans ce bash comme le bash d'un système UNIX puisque ca en est un.
+
  
 #Exécuter la commande du makefile comme dans un terminal linux
 
 Maintenant il vous suffit d’ouvrir Ubuntu et de taper ca a chaque fois que vous voulez lancer votre code :
 ```bash
-cd /mnt/c                                       		      #va sur le disque dur C: du pc
+cd /mnt/c                               #va sur le disque dur C: du pc
 cd “fichier ou ya le projet”    		      #rentre dans le bon fichier
 make fact
 ./fact -N 4 input.txt output.txt
