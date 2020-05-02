@@ -6,16 +6,14 @@ author: Andru Onciul
 
 #Installer Ubuntu 
 
-1)	Installer Ubuntu depuis le Windows Store 
+1.	Installer Ubuntu depuis le Windows Store 
 ![Publish]({{ site.baseurl }}/images/UbuntuWindowsStore.PNG)
 
-1.1) Si cette erreur apparait: 
+1.1. Si cette erreur apparait: 
 ![Publish]({{ site.baseurl }}/images/ErreurSubSystemComponent.PNG)
  
-
-taper cette ligne dans le powershell de windows (executer en tant que administrateur sinon ca marchera pas)
-
-Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux
+taper cette ligne dans le powershell de windows (executer en tant que administrateur sinon ca marchera pas):
+```Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux```
 
 2)	une fois ubuntu installé : 
 2.1) choisir un username (minuscule sans espaces) et 
@@ -23,7 +21,7 @@ Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-L
 
 #Taper ces lignes de commandes dans Ubuntu
 
-cd /mnt/c                              #va sur le disque dur C: du pc
+```cd /mnt/c                              #va sur le disque dur C: du pc```
 ![Publish]({{ site.baseurl }}/images/mountCs.PNG)
 
 Vous êtes maintenant sur les fichiers du disque dur(C:) principal de votre pc. 
@@ -35,24 +33,27 @@ Ces lignes de commandes ne devront être taper que la première fois (tout reste
 sudo apt-get update                         		      #update toutes les libraires
 #ubuntu demande le code du l’utilisateur du pc il suffit de le tapper et taper ENTER
 
- 
+ ```bash
 sudo apt-get install build-essential		    #compilateur et debug (notamment commande gcc)
 sudo apt-get install make			    #pouvoir utiliser des make
 sudo apt-get install manpages-dev		    #documentation
+```
 
 Voici quelques librairies indispensables pour le projet a vous d'en mettre plus si besoin. 
 Il suffit de taper ubuntu install "nom de la librairie sur google" pour trouver la commande a taper
+```bash
 sudo apt-get install valgrind			    #valgrind
 sudo apt-get install cppcheck 			    #cppcheck
 sudo apt-get install libcunit1 libcunit1-doc libcunit1-dev 		#cunit
 sudo apt-get install zlib1g-dev			    #librairies et headers
-
+```
  
 #Exécuter la commande du makefile comme dans un terminal linux
 
 Maintenant il vous suffit d’ouvrir Ubuntu et de taper ca a chaque fois que vous voulez lancer votre code :
-
+```bash
 cd /mnt/c                                       		      #va sur le disque dur C: du pc
 cd “fichier ou ya le projet”    		      #rentre dans le bon fichier
 make fact
 ./fact -N 4 input.txt output.txt
+```
