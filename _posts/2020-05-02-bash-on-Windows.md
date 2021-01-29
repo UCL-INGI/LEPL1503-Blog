@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Terminal Ubuntu sur WIndows
+title: Terminal Ubuntu sur Windows
 author: Andru Onciul
 ---
 Ce petit montre une manière d'éxecuter du code C depuis Windows sans passer par Virtualbox.
